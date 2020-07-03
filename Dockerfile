@@ -12,7 +12,7 @@ RUN dnf -y --nogpg install vim nano emacs git wget bzip2 ca-certificates sudo py
 RUN dnf -y --nogpg update && dnf clean all
 
 # install jsroot
-RUN npm i jsroot
+# RUN npm i jsroot
 
 # Add configurations
 RUN mkdir -p /install
