@@ -11,6 +11,9 @@ RUN dnf -y --nogpg install vim nano emacs git wget bzip2 ca-certificates sudo py
     gcc-gfortran.x86_64 gcc-c++.x86_64 libffi libffi-devel openssl openssl-devel&& dnf clean all
 RUN dnf -y --nogpg update && dnf clean all
 
+# install jsroot
+RUN npm i jsroot
+
 # Add configurations
 RUN mkdir -p /install
 ADD requirements.txt /install/requirements.txt
