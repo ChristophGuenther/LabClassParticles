@@ -1,0 +1,21 @@
+--- /usr/include/Pythia8/PythiaStdlib.h.old 2017-09-16 08:29:50.212899736 +0000
++++ /usr/include/Pythia8/PythiaStdlib.h 2017-09-16 08:44:38.662581773 +0000
+@@ -24,12 +24,14 @@
+ #include <list>
+ 
+ // Stdlib header file for dynamic library loading.
+-#define dlsym __
+-#include <dlfcn.h>
+-#undef dlsym
++#ifndef __CLING__
++#define dlsym __
++#include <dlfcn.h>
++#undef dlsym
+ 
+ // Redefine dlsym to suppress compiler warnings.
+-extern "C" void *(*dlsym(void *handle, const char *symbol))();
++extern "C" void *(*dlsym(void *handle, const char *symbol))();
++#endif
+ 
+ // Stdlib header file for input and output.
+ #include <iostream>
