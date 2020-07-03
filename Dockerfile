@@ -12,7 +12,9 @@ RUN dnf -y --nogpg install vim nano emacs git wget bzip2 ca-certificates sudo py
 RUN dnf -y --nogpg update && dnf clean all
 
 # install jsroot
-# RUN npm i jsroot
+RUN npm i jsroot
+#RUN npm install -g bower
+#RUN bower install jsroot --allow-root
 
 # Add configurations
 RUN mkdir -p /install
