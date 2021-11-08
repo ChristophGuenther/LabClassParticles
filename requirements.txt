@@ -1,4 +1,4 @@
-jupyterhub==1.0.0
+jupyterhub==1.5.0
 jupyterlab==0.35.6
 notebook==5.7.8
 requests==2.22.0
